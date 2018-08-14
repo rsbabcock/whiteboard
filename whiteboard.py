@@ -87,6 +87,7 @@ print(uniqueChecker("poop"))
 # Check if string of characters is a permutation of a palindrome
 
 def is_pal(string):
+    '''author: Josh barton'''
     result = None
     lowered = string.lower()
     string_dict = dict()
