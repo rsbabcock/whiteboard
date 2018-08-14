@@ -73,3 +73,47 @@ def FizzBuzz():
     print(fizzbuzz)
 
 print(FizzBuzz())    
+
+# return true or fales if each character is unique in a string
+
+def uniqueChecker(string):
+    if sorted(list(set(string))) == sorted(list(string)):
+        return True
+    else:
+        return False  
+
+print(uniqueChecker("poop"))          
+
+# Check if string of characters is a permutation of a palindrome
+
+def is_pal(string):
+    result = None
+    lowered = string.lower()
+    string_dict = dict()
+    for char in lowered:
+        if char in string_dict:
+            string_dict[char] += 1
+        else:
+            string_dict[char] = 1
+    if len(string)%2 == 0:
+        for item, value in string_dict.items():
+            if value%2 > 0:
+                result = False
+                break
+            else: 
+                result = True
+    else: 
+        counter = 0
+        for item, value in string_dict.items():
+            if value%2 > 0:
+                counter += 1
+        if counter > 1:
+            result = False
+        else: 
+            result = True
+    return result
+
+print(is_pal("super"))    
+        
+        
+
